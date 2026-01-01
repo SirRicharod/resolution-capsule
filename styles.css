@@ -1,0 +1,55 @@
+.container {
+    background-color: #fff5de;
+
+    background-image: radial-gradient(#c26e007a 1px, transparent 1px);
+    background-size: 30px 30px;
+    max-width: 100% !important;
+    position: relative;
+    overflow: hidden;
+}
+
+.notepad-wrapper {
+    background-image: url("notepadbg.png");
+    background-size: contain;
+    background-position: left;
+    background-repeat: repeat-y;
+
+    width: 600px;
+    height: 600px;
+
+    padding-top: 25px;
+
+    box-shadow: 10px 10px 20px rgba(189, 82, 0, 0.1);
+    /* Makes the paper look 3D */
+    border-radius: 2px;
+    display: flex;
+    /* Helps align the textarea inside */
+    justify-content: center;
+    border: 2px solid #482700;
+    box-shadow: 20px 20px 0px rgba(0, 0, 0, 0.1);
+}
+
+.resolution-input {
+    width: 85%;
+    height: 100%;
+    overflow-y: auto;
+    resize: none;
+
+    margin-left: 90px;
+    line-height: 25px;
+    margin-top: -13px;
+    padding-top: 5px;
+
+    background: transparent;
+    border: none;
+    outline: none;
+
+    font-family: 'Indie Flower', cursive;
+    font-size: 18px;
+}
+
+.resolution-input::placeholder {
+    color: black;
+    font-style: italic;
+    font-family: 'Courier New', Courier, monospace;
+}
