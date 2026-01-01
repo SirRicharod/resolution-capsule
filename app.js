@@ -28,14 +28,18 @@ window.onload = () => {
 // SUBMIT BUTTON LOGIC
 submitBtn.addEventListener('click', () => {
     const text = textarea.value.trim();
-    if (text === "") return alert("Please write something first!");
-
+    if (text === "") {
+        const toastElement = document.getElementById('errorToast');
+        const toast = new bootstrap.Toast(toastElement);
+        toast.show();
+        return;
+    }
     const currentYear = new Date().getFullYear();
     const capsuleData = {
         text: text,
         // For testing: unlocks in 5 seconds. 
-        // Real logic: new Date(`January 1, ${currentYear + 1} 00:00:00`).getTime()
-        unlockDate: new Date().getTime() + 5000,
+        // unlockDate: new Date().getTime() + 5000,
+        unlockDate : new Date(`January 1, ${currentYear + 1} 00:00:00`).getTime(),
         isLocked: true
     };
 
