@@ -39,7 +39,7 @@ submitBtn.addEventListener('click', () => {
         text: text,
         // For testing: unlocks in 5 seconds. 
         // unlockDate: new Date().getTime() + 5000,
-        unlockDate : new Date(`January 1, ${currentYear + 1} 00:00:00`).getTime(),
+        unlockDate: new Date(`January 1, ${currentYear + 1} 00:00:00`).getTime(),
         isLocked: true
     };
 
@@ -88,7 +88,12 @@ function runTimerLogic(capsuleData, activeYear) {
         const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
         const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-        timerDisplay.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+        const d = String(days).padStart(2, '0');
+        const h = String(hours).padStart(2, '0');
+        const m = String(minutes).padStart(2, '0');
+        const s = String(seconds).padStart(2, '0');
+
+        timerDisplay.innerHTML = `${d}d ${h}h ${m}s ${s}s`;
     };
 
     update(); // Run once immediately
